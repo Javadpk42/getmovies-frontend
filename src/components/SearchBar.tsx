@@ -16,7 +16,7 @@ const SearchBar = ({ searchQuery, onSearchChange }: SearchBarProps) => {
     <form className="flex justify-start mt-0 py-1 px-1 bg-white rounded-lg border border-gray-300 shadow-sm">
       <label htmlFor="searchInput" className="sr-only">Search movies and series</label>
       <div className="flex gap-2">
-        <FontAwesomeIcon icon={faSearch} className="w-5 mt-1 text-gray-500" />
+        <FontAwesomeIcon icon={faSearch} className="w-5  mt-1 text-gray-500" />
         <input
           ref={inputRef}
           value={searchQuery}
@@ -31,6 +31,7 @@ const SearchBar = ({ searchQuery, onSearchChange }: SearchBarProps) => {
         </Link>
       </div>
     </form>
+    
   );
 };
 
