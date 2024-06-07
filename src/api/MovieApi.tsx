@@ -2,12 +2,11 @@ import axios from 'axios';
 import { Movie } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; 
-console.log('sadfsadfsadfsadfsadf',API_BASE_URL );
 
 
 export const fetchMovies = async (): Promise<Movie[]> => {
   try {
-    const response = await axios.get<Movie[]>(`${API_BASE_URL}/movies`);
+    const response = await axios.get<Movie[]>(`${API_BASE_URL}/api/movies`);
     return response.data;
   } catch (error) {
     console.error("There was an error fetching the movie data!", error);
@@ -17,7 +16,7 @@ export const fetchMovies = async (): Promise<Movie[]> => {
 
 export const searchMovies = async (title: string): Promise<Movie[]> => {
     try {
-      const response = await axios.get<Movie[]>(`${API_BASE_URL}/movies/search?title=${title}`);
+      const response = await axios.get<Movie[]>(`${API_BASE_URL}/api/movies/search?title=${title}`);
       return response.data;
     } catch (error) {
       console.error("Error searching for movies:", error);
