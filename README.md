@@ -1,30 +1,55 @@
-# React + TypeScript + Vite
+# Get Movies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+This is a web application that interacts with a list of movies. The application includes a backend service to handle API requests and a frontend interface to display and manage the movie data. The design is implemented based on the provided UI design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features:
 
-## Expanding the ESLint configuration
+- **Display Movies:** Fetch and display a list of movies from the backend, which are stored in MongoDB Atlas.
+  
+- **Search Functionality:** Provide a search functionality to filter movies by title, allowing users to quickly find their desired movies.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Favourites:** Allow users to mark movies as favorites and display a list of their favorite movies. This functionality uses local storage to save favorites.
 
-- Configure the top-level `parserOptions` property like this:
+- **Responsive Design:** Ensure the application is fully responsive, providing an optimal viewing experience across different devices.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Loading Indicator:** Implement a loader to indicate loading state while fetching movie data from the backend API.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Getting Started
+
+To set up the frontend locally, follow these steps:
+
+### Prerequisites
+
+- Node.js installed on your machine.
+- Git installed on your machine.
+- An internet connection to fetch dependencies.
+
+### Installation Steps
+
+1. Clone the repository to your local machine:
+    ```sh
+    git clone https://github.com/Javadpk42/getmovies-frontend.git
+    ```
+
+2. Navigate to the project directory:
+    ```sh
+    cd getmovies-frontend
+    ```
+
+3. Install the required dependencies:
+    ```sh
+    npm install
+    ```
+
+4. Set Up Environment Variables:
+    Create a `.env` file in the root directory and define the following environment variables:
+    ```env
+    VITE_API_BASE_URL=<your-backend-api-base-url>
+    ```
+
+5. Start the development server:
+    ```sh
+    npm run dev
+    ```
