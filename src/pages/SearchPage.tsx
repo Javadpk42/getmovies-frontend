@@ -91,7 +91,7 @@ const SearchPage = () => {
         resetSearch={() => setSearchQuery('')}
         
       />
-      <div className="bg-gray-50 mt-32 lg:mt-20">
+      <div className="bg-gray-50 mt-32 md:mt-20">
 
       <main className="flex flex-col px-6 md:px-12 lg:px-24 mt-10">
         <h2 className="mt-5 text-xl md:text-3xl font-bold text-black">Search</h2>

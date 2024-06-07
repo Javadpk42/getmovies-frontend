@@ -45,7 +45,7 @@ const FavouritesPage = () => {
         onSearchChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
         resetSearch={() => setSearchQuery('')}
       />
-      <div className="bg-gray-50 mt-32 lg:mt-20">
+      <div className="bg-gray-50 mt-32 md:mt-20">
 
       <div className="px-6 md:px-12 lg:px-24 py-10">
         <div className="flex flex-wrap gap-10 items-center justify-between">
