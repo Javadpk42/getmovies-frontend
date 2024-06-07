@@ -164,16 +164,19 @@ const FavouritesPage = () => {
   };
 
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchFavQuery, setSearchFavQuery] = useState("");
 
 
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
+    setSearchFavQuery(e.target.value);
   };
 
+  const regex = new RegExp(`^${searchFavQuery}`, 'i');
   const filteredMovies = favorites.filter(movie =>
-    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+    regex.test(movie.title)
   );
+
 
   return (
     <div className="bg-gray-50">
@@ -197,7 +200,7 @@ const FavouritesPage = () => {
               <label htmlFor="searchInput" className="sr-only">Search from favourites</label>
               <div className="flex gap-2 w-full">
                 <FontAwesomeIcon icon={faSearch} className="w-5 mt-2 text-gray-500" />
-                <input type="text" id="searchInput" placeholder="Search from favourites" className="w-full py-1 pl-2 border-none focus:outline-none" onChange={handleSearchChange} />
+                <input type="text" id="searchInput" value={searchFavQuery} placeholder="Search from favourites" className="w-full py-1 pl-2 border-none focus:outline-none" onChange={handleSearchChange} />
               </div>
             </form>
           </div>
