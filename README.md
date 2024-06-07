@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This is a web application that interacts with a list of movies. The application includes a backend service to handle API requests and a frontend interface to display and manage the movie data. The design is implemented based on the provided UI design.
+This is a web application that interacts with a list of movies. The application includes a backend service to handle API requests using Node and MongoDB and a frontend interface to display and manage the movie data. The design is implemented based on the provided UI design.
 
-## Features:
+## Features
 
 - **Display Movies:** Fetch and display a list of movies from the backend, which are stored in MongoDB Atlas.
   
@@ -53,3 +53,8 @@ To set up the frontend locally, follow these steps:
     ```sh
     npm run dev
     ```
+
+## Backend Repository
+
+For the backend repository, please visit: [Get Movies Backend](https://github.com/Javadpk42/getmovies-backend).
+
