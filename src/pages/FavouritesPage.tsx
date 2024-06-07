@@ -8,10 +8,8 @@ import MoviesGrid from "../components/MoviesGrid";
 import { Movie } from "../types";
 
 const FavouritesPage = () => {
-  const [loading, setLoading] = useState(false);
   const [favorites, setFavorites] = useState<Movie[]>(() => {
     const savedFavorites = localStorage.getItem("favorites");
-    setLoading(true);
     return savedFavorites ? JSON.parse(savedFavorites) : [];
   });
 
@@ -72,7 +70,7 @@ const FavouritesPage = () => {
             No favorites added yet. <Link to="/" className="text-rose-600">Discover movies here</Link>
           </div>
         )}
-        <MoviesGrid movies={filteredMovies} favorites={favorites} toggleFavorite={toggleFavorite} loading={loading} />
+        <MoviesGrid movies={filteredMovies} favorites={favorites} toggleFavorite={toggleFavorite} loading={false} />
         
       </div>
     </div>

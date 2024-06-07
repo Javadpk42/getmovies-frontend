@@ -10,10 +10,10 @@ interface MoviesGridProps {
   loading:boolean
 }
 
-const MoviesGrid = ({ movies, favorites, toggleFavorite }: MoviesGridProps) => (
+const MoviesGrid = ({ movies, favorites, toggleFavorite,loading }: MoviesGridProps) => (
   <section className="mt-10 w-full">
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-10 sm:gap-12 md:gap-14 lg:gap-16">
-      {movies.length > 0 ? (
+      {!loading ? (
         movies.map((movie, index) => {
           const isFavorite = favorites.some((fav) => fav.id === movie.id);
           return <MovieCard key={index} movie={movie} isFavorite={isFavorite} toggleFavorite={toggleFavorite} />;
