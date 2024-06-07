@@ -1,5 +1,5 @@
 
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect,useRef, ChangeEvent } from "react";
 import { fetchMovies, searchMovies } from "../api/MovieApi";
 import MoviesGrid from "../components/MoviesGrid";
 import Header from "../components/Header";
@@ -74,6 +74,14 @@ const SearchPage = () => {
       setLoading(false);
     }
   };
+
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, []);
 
   return (
     <div className="bg-gray-50">

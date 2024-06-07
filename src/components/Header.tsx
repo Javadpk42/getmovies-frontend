@@ -2,7 +2,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilm, faHeart, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { ChangeEvent } from 'react';
+import {useEffect,useRef, ChangeEvent } from 'react';
 
 interface HeaderProps {
   searchQuery: string;
@@ -13,6 +13,13 @@ interface HeaderProps {
 const Header = ({ searchQuery, onSearchChange, resetSearch }: HeaderProps) => {
   const location = useLocation();
   const isSearchPage = location.pathname === '/search';
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isSearchPage && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isSearchPage]);
 
 
   return (
@@ -42,6 +49,7 @@ const Header = ({ searchQuery, onSearchChange, resetSearch }: HeaderProps) => {
               <div className="flex gap-2">
                 <FontAwesomeIcon icon={faSearch} className="w-5 mt-1 text-gray-500" />
                 <input
+                  ref={searchInputRef}
                   type="text"
                   id="searchInput"
                   value={searchQuery}
