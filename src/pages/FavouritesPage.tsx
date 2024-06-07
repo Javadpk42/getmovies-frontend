@@ -154,14 +154,26 @@ const FavouritesPage = () => {
   });
 
 
+  // const toggleFavorite = (movie: Movie) => {
+  //   const isFavorite = favorites.some((fav) => fav.id === movie.id);
+  //   if (isFavorite) {
+  //     setFavorites(favorites.filter((fav) => fav.id !== movie.id));
+  //   } else {
+  //     setFavorites([...favorites, movie]);
+  //   }
+  // };
+
   const toggleFavorite = (movie: Movie) => {
-    const isFavorite = favorites.some((fav) => fav.id === movie.id);
-    if (isFavorite) {
-      setFavorites(favorites.filter((fav) => fav.id !== movie.id));
-    } else {
-      setFavorites([...favorites, movie]);
-    }
+    setFavorites(prevFavorites => {
+      const isFavorite = prevFavorites.some((fav) => fav.id === movie.id);
+      if (isFavorite) {
+        return prevFavorites.filter((fav) => fav.id !== movie.id);
+      } else {
+        return [...prevFavorites, movie];
+      }
+    });
   };
+  
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchFavQuery, setSearchFavQuery] = useState("");
