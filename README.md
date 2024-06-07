@@ -28,4 +28,28 @@ To set up the frontend locally, follow these steps:
 
 ### Installation Steps
 
-1. Clone the repository to your local machine: `git clone https://github.com/Javadpk42/getmovies-frontend.git && cd project dir && npm install && npm run dev`
+1. Clone the repository to your local machine:
+    ```sh
+    git clone https://github.com/Javadpk42/getmovies-frontend.git
+    ```
+
+2. Navigate to the project directory:
+    ```sh
+    cd getmovies-frontend
+    ```
+
+3. Install the required dependencies:
+    ```sh
+    npm install
+    ```
+
+4. Set Up Environment Variables:
+    Create a `.env` file in the root directory and define the following environment variables:
+    ```env
+    VITE_API_BASE_URL=<your-backend-api-base-url>
+    ```
+
+5. Start the development server:
+    ```sh
+    npm run dev
+    ```
