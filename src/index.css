@@ -1,61 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* styles.css */
-/* Override Slick CSS for Dots */
-/* styles.css */
-/* Override Slick CSS for Dots */
-/* styles.css */
-/* Override Slick CSS for Dots */
+
 .slick-dots {
     bottom: 20px;
     left: 500px; 
     color: white;
     text-decoration: none;
-    /* Adjust the left position as needed */
 }
 
-/* Custom CSS to Position Dots Inside Image */
 .slick-dots li {
     text-decoration: none;
-    margin: 0; /* Remove margin from li */
-    position: relative; /* Allow positioning within li */
-    display: inline-block; /* Make sure the dots are aligned horizontally */
+    margin: 0; 
+    position: relative; 
+    display: inline-block; 
 }
 
-/* Gap control using pseudo-elements */
 .slick-dots li:before {
     content: '';
     display: inline-block;
-    width: 5px; /* Adjust the gap width as needed */
+    width: 5px; 
 }
 
-
-
-/* Additional styling for dots */
 .slick-dots li button {
-    width: 6px; /* Set the default width */
-    height: 6px; /* Set the default height */
-    border-radius: 50%; /* Make the dots circular */
-    background-color: rgba(238, 238, 238, 0.5); /* Adjust opacity as needed */
+    width: 6px;
+    height: 6px; 
+    border-radius: 50%; 
+    background-color: rgba(238, 238, 238, 0.5); 
     transition: background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
     text-decoration: none;
-    border: none; /* Remove default button border */
-    padding: 0; /* Remove default button padding */
+    border: none; 
+    padding: 0;
 }
 
-/* Adjust the size of the active dot */
 .slick-dots li.slick-active button {
-    width: 13px; /* Set the width of the active dot */
-    height: 6px; /* Set the height of the active dot */
-    border-radius: 5px; /* Adjust border radius to create a pill shape */
+    width: 13px; 
+    height: 6px;
+    border-radius: 5px; 
     background-color: #f5e3e3;
     text-decoration: none;
-    /* Change the color of the active dot */
 }
 
 .slick-dots li.slick-active:before {
-    width: 15px; /* Adjust the width to ensure the active dot's space is accounted for */
+    width: 15px;
 }
 
 .slick-dots li.slick-active button:before {

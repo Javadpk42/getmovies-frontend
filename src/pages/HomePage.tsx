@@ -225,7 +225,6 @@ const HomePage = () => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching movies:", error);
-        setLoading(false);
       }
     };
 
