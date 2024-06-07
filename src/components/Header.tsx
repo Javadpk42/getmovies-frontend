@@ -23,7 +23,7 @@ const Header = ({ searchQuery, onSearchChange, resetSearch }: HeaderProps) => {
 
 
   return (
-    <header className="flex flex-col lg:flex-row gap-5 justify-between px-6 md:px-12 lg:px-24 py-5 bg-white">
+    <header className="flex flex-col lg:flex-row gap-5 justify-between px-6 md:px-12 lg:px-24 py-6 bg-white fixed top-0 z-40 w-full">
       <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center lg:w-auto">
         <div className="flex justify-between w-full lg:w-auto">
           <Link to="/">

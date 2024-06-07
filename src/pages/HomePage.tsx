@@ -51,19 +51,20 @@ const HomePage = () => {
   
 
   return (
-    <div className="bg-gray-50">
+     <>
       <Header
         searchQuery={searchQuery}
         onSearchChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
         resetSearch={() => setSearchQuery('')}
       />
-      
+      <div className="bg-gray-50 mt-32 lg:mt-20">
       <div className="px-6 md:px-12 lg:px-24 py-10">
         <SliderSection movies={movies} loading={loading} />
         <h2 className="mt-20 text-3xl font-bold text-black">Movies</h2>
         <MoviesGrid movies={filteredMovies} favorites={favorites} toggleFavorite={toggleFavorite} loading={loading} />
       </div>
     </div>
+     </>
   );
 };
 
