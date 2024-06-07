@@ -2,6 +2,8 @@ import axios from 'axios';
 import { Movie } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; 
+console.log('sadfsadfsadfsadfsadf',API_BASE_URL );
+
 
 export const fetchMovies = async (): Promise<Movie[]> => {
   try {
