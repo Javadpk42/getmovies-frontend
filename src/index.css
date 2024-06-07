@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 .slick-dots {
-    bottom: 20px;
-    left: 500px; 
+    bottom: 32px;
+    left: 580px; 
     color: white;
     text-decoration: none;
 }
