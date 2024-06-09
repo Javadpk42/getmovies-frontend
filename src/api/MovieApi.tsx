@@ -6,6 +6,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
  
 export const fetchMovies = async (): Promise<Movie[]> => {
   try {
+    console.log('axios called')
     const response = await axios.get<Movie[]>(`${API_BASE_URL}/api/movies`);
     console.log('the respponse is :',response)
     return response.data;
