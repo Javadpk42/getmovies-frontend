@@ -99,7 +99,6 @@ const SearchPage = () => {
       <Header
         searchQuery={searchQuery}
         onSearchChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
-        resetSearch={() => setSearchQuery('')}
       />
       <div className="bg-gray-50 mt-32 md:mt-20">
         <main className="flex flex-col px-6 md:px-12 lg:px-24 mt-10">
@@ -118,3 +117,6 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
+
+
+              

@@ -1,15 +1,14 @@
 
-import { useState, useEffect, ChangeEvent } from "react";
+import { useState, useEffect } from "react";
+import { Movie } from "../types";
 import { fetchMovies } from "../api/MovieApi";
+import Header from "../components/Header";
 import SliderSection from "../components/SliderSection";
 import MoviesGrid from "../components/MoviesGrid";
-import Header from "../components/Header";
-import { Movie } from "../types";
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState<Movie[]>([]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [favorites, setFavorites] = useState<Movie[]>(() => {
     const savedFavorites = localStorage.getItem("favorites");
     return savedFavorites ? JSON.parse(savedFavorites) : [];
@@ -44,24 +43,18 @@ const HomePage = () => {
     }
   };
 
-  const filteredMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  
 
   return (
      <>
       <Header
-        searchQuery={searchQuery}
-        onSearchChange={(e: ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
-        resetSearch={() => setSearchQuery('')}
+        searchQuery={''}
+        onSearchChange={() => {}}
       />
       <div className="bg-gray-50 mt-32 md:mt-20">
       <div className="px-6 md:px-12 lg:px-24 py-10">
         <SliderSection movies={movies} loading={loading} />
         <h2 className="mt-20 text-3xl font-bold text-black">Movies</h2>
-        <MoviesGrid movies={filteredMovies} favorites={favorites} toggleFavorite={toggleFavorite} loading={loading} />
+        <MoviesGrid movies={movies} favorites={favorites} toggleFavorite={toggleFavorite} loading={loading} />
       </div>
     </div>
      </>

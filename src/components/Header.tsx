@@ -2,15 +2,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilm, faHeart, faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
-import {useEffect,useRef, ChangeEvent } from 'react';
+import {useEffect,useRef } from 'react';
+import { HeaderProps } from "../types";
 
-interface HeaderProps {
-  searchQuery: string;
-  onSearchChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  resetSearch: () => void;
-}
-
-const Header = ({ searchQuery, onSearchChange, resetSearch }: HeaderProps) => {
+const Header = ({ searchQuery, onSearchChange }: HeaderProps) => {
   const location = useLocation();
   const isSearchPage = location.pathname === '/search';
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -43,7 +38,7 @@ const Header = ({ searchQuery, onSearchChange, resetSearch }: HeaderProps) => {
           </Link>
         </div>
         <div className="flex justify-start">
-          <Link to="/search" onClick={resetSearch}>
+          <Link to="/search" >
             <form className="flex justify-start mt-0 py-1 px-1 bg-white rounded-lg border border-gray-300 shadow-sm">
               <label htmlFor="searchInput" className="sr-only">Search movies and series</label>
               <div className="flex gap-2">
